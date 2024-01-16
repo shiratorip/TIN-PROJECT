@@ -35,20 +35,20 @@ const GamerList = () => {
 
     return (
         <div>
-            <div className='centered-div'>
-                <button disabled={prevPage === null}>
-                    <Link to={`/gamer-list/?page=${prevPage}`}>previous</Link>
-                </button>
+            <div className='centered-div-buttons'>
+                <Link to={`/gamer-list/?page=${prevPage}`}><button className="page-button" disabled={prevPage === null}>
+                    previous
+                </button></Link>
                 {thisPage}
-                <button>
-                    <Link to={`/gamer-list/?page=${nextPage}`}>next</Link>
-                </button>
+                <Link to={`/gamer-list/?page=${nextPage}`}><button className="page-button">
+                    next
+                </button></Link>
             </div>
+            <h2>Gamers</h2>
             <div className="centered-div">
-                <h1>Gamer List</h1>
                 <ul>
                     {gamers.map(gamer => (
-                        <li key={gamer.id}>
+                        <li className="ligamer" key={gamer.id}>
                             <img onError={e => {
                                 e.currentTarget.src = "https://osu.ppy.sh/images/layout/avatar-guest.png"
                             }} src={gamer.avatar_url} height={50} width={50} alt="Gamer Avatar"/> {gamer.nickname} <Link
@@ -57,6 +57,7 @@ const GamerList = () => {
                     ))}
                 </ul>
             </div>
+
         </div>
     );
 };

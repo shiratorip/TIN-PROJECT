@@ -16,26 +16,24 @@ const Tournament = () => {
     }, []);
 
     return (
-        <div className="centered-div">
-            <h1>Tournament details: {tournament.name}</h1>
-            <div>
-                <img src={tournament.banner_url} alt="banner" height={100} width={100}/>
+        <div>
+            <h1>Tournament details: <br/>{tournament.name}</h1>
+            <div className="centered-div">
+                <img className="litourney" src={tournament.banner_url} alt="banner" height={200} width={400}/>
             </div>
-            <div>
-                <strong>Game:</strong> {tournament.game_name}
+            <div className="centered-div">
+                <div>
+                    <strong>Game:</strong> {tournament.game_name}<br/><br/>
+                    <strong>starts:</strong> {tournament.start_date}<br/><br/>
+                    <strong>ends:</strong> {tournament.end_date}<br/>
+                </div>
+            <div className="description">
+                    <strong>description:</strong> {tournament.description}<br/>
             </div>
-            <div>
-                <strong>starts:</strong> {tournament.start_date}
+                <Link to={`/tournament-edit/?id=${tournament.id}`}>
+                    <button>edit tournament</button>
+                </Link>
             </div>
-            <div>
-                <strong>ends:</strong> {tournament.end_date}
-            </div>
-            <div>
-                <strong>description:</strong> {tournament.description}
-            </div>
-            <Link to={`/tournament-edit/?id=${tournament.id}`}>
-                <button>edit tournament</button>
-            </Link>
         </div>
     );
 };

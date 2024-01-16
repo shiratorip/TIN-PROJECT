@@ -41,42 +41,45 @@ const GamerCreate = () => {
         }));
     };
 
-    return (
-        <div className="centered-div">
+    return (<div>
             <h1>Create Gamer</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Nickname:
-                    <input className="inputfield" type="text" name="nickname" value={formData.nickname}
-                           onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Password:
-                    <input className="inputfield" type="text" name="password" value={formData.password}
-                           onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Description:
-                    <textarea className="inputfield" name="description" value={formData.description} onChange={handleChange}
-                              required/>
-                </label>
-                <br/>
-                <label>
-                    Platform:
-                    <input className="inputfield" type="text" name="platform" value={formData.platform}
-                           onChange={handleChange}/>
-                </label>
-                <br/>
-                <label>
-                    Avatar URL:
-                    <input className="inputfield" type="text" name="avatar_url" value={formData.avatar_url}
-                           onChange={handleChange}/>
-                </label>
-                <br/>
-                <button className="createButton" type="submit">Create Gamer</button>
-            </form>
+            <div className="centered-div">
+
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Nickname:<br/>
+                        <input className="inputfield" type="text" name="nickname" value={formData.nickname}
+                               onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Password:<br/>
+                        <input className="inputfield" type="text" name="password" value={formData.password}
+                               onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Description:<br/>
+                        <textarea className="inputfield" name="description" value={formData.description}
+                                  onChange={handleChange}
+                                  required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Platform:<br/>
+                        <input className="inputfield" type="text" name="platform" value={formData.platform}
+                               onChange={handleChange}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Avatar URL:<br/>
+                        <input className="inputfield" type="text" name="avatar_url" value={formData.avatar_url}
+                               onChange={handleChange}/>
+                    </label>
+                    <br/>
+                    <button className="createButton" type="submit">Create Gamer</button>
+                </form>
+            </div>
         </div>
     );
 };

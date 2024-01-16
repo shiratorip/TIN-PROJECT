@@ -15,27 +15,31 @@ const Gamer = () => {
     }, [searchParams]);
 
     return (
-        <div className="centered-div">
+        <div>
             <h1>Gamer Profile: {gamer.nickname}</h1>
-            <div>
-                <img onError={e => {
-                    e.currentTarget.src = "https://osu.ppy.sh/images/layout/avatar-guest.png"
-                }} src={gamer.avatar_url} alt="Avatar" height={100} width={100}/>
+            <div className="centered-div">
+                    <img className="ligamer" onError={e => {
+                        e.currentTarget.src = "https://osu.ppy.sh/images/layout/avatar-guest.png"
+                    }} src={gamer.avatar_url} alt="Avatar" height={100} width={100}/>
             </div>
-            <div>
-                <strong>Nickname:</strong> {gamer.nickname}
-            </div>
-            <div>
-                <strong>Description:</strong> {gamer.description}
-            </div>
-            <div>
-                <strong>Platform:</strong> {gamer.platform}
+            <div className="centered-div">
+                <div className="divel">
+
+                        <strong>Nickname:</strong> {gamer.nickname}
+
+
+                    <div className="divel">
+                         <div className="description"><strong>Description:</strong><br/>{gamer.description}</div>
+                    </div>
+                    <div className="divel">
+                        <strong>Platform:</strong> {gamer.platform}
+                    </div>
+                </div>
             </div>
             <Link to={`/gamer-edit/?id=${gamer.id}`}>
                 <button>edit profile</button>
             </Link>
         </div>
-
 
     );
 

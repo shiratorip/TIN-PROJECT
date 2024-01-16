@@ -41,41 +41,47 @@ const TournamentCreate = () => {
     };
 
     return (
-        <div className="centered-div">
+        <div>
             <h1>Create Tournament</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Tournament Name:
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Start Date:
-                    <input type="date" name="start_date" value={formData.start_date} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    End Date:
-                    <input type="date" name="end_date" value={formData.end_date} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Game Name:
-                    <input type="text" name="game_name" value={formData.game_name} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Banner URL:
-                    <input type="text" name="banner_url" value={formData.banner_url} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <label>
-                    Description:
-                    <textarea name="description" value={formData.description} onChange={handleChange} required/>
-                </label>
-                <br/>
-                <button type="submit">Create Tournament</button>
-            </form>
+            <div className="centered-div">
+
+                <form onSubmit={handleSubmit}>
+                    <label>
+                        Tournament Name:
+                        <input className="inputfield" type="text" name="name" value={formData.name} onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Start Date:
+                        <input className="inputfield" type="date" name="start_date" value={formData.start_date} onChange={handleChange}
+                               required/>
+                    </label>
+                    <br/>
+                    <label>
+                        End Date:
+                        <input className="inputfield" type="date" name="end_date" value={formData.end_date} onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Game Name:
+                        <input className="inputfield" type="text" name="game_name" value={formData.game_name} onChange={handleChange}
+                               required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Banner URL:
+                        <input className="inputfield" type="text" name="banner_url" value={formData.banner_url} onChange={handleChange}
+                               required/>
+                    </label>
+                    <br/>
+                    <label>
+                        Description:
+                        <textarea className="inputfield" name="description" value={formData.description} onChange={handleChange} required/>
+                    </label>
+                    <br/>
+                    <button type="submit">Create Tournament</button>
+                </form>
+            </div>
         </div>
     );
 };
