@@ -1,0 +1,15 @@
+{
+  "name": "TIN-PROJECT",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+  "scripts": {
+    "start server": "cd server && npm start",
+    "start client": "cd client && npm start",
+    "start db reinstall": "cd server && node dbinstallation.js",
+    "stop": "cd client && npm stop && cd ../server && npm stop",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+}

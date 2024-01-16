@@ -16,6 +16,9 @@ function executeSqlScript(filePath) {
     });
 }
 
+db.exec("DROP TABLE IF EXISTS Gamer;\n" +
+    "DROP TABLE IF EXISTS Participation;\n" +
+    "DROP TABLE IF EXISTS Tournament;\n")
 
 executeSqlScript('../database/create-tables.sql');
 
