@@ -65,13 +65,12 @@ body {
     padding: 0;
 }
 
-/* Headings */
+
 h1, h2, h3 {
     color: #ffffff;
     text-align: center;
 }
 
-/* Strong (Bold) Text */
 strong {
     font-weight: bold;
     color: #ff9900;
@@ -82,6 +81,9 @@ div {
     margin: 10px 0;
     background-color: #333333;
     border-radius: 10px;
+}
+.justdiv {
+    all: initial;
 }
 
 button {
@@ -160,6 +162,19 @@ button:hover, .page-button:hover {
     transition: background-color 0.3s ease;
 }
 
+.centered-div-part {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    flex-direction: row;
+    position: relative;
+
+}
+.cen-nav{
+    justify-content: center;
+    align-items: center;
+}
 .ligamer {
     list-style: none;
     padding: 15px;
@@ -185,11 +200,29 @@ button:hover, .page-button:hover {
     color: #fff;
     font-size: 16px;
 }
+.liparticipation{
+    list-style: none;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #1c1c1c;
+    border-radius: 8px;
+
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 16px;
+    flex-direction: column;
+    width: 250px;
+    display: flex;
+}
+.liparticipation a:hover {
+    background-color: #ff9900;
+    transition: background-color 0.3s ease;
+}
 
 .profile-div {
 
-}
-
+ }
 .inputfield {
     padding: 10px;
     margin: 10px 0;

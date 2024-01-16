@@ -94,14 +94,15 @@ const ParticipationCreate = () => {
     }
 
     return (
+        <div>
         <div className="centered-div">
             <h1>Create Participation</h1>
             <div id="container" style={{display: 'flex'}}>
 
-                <div style={{flex: 1, marginRight: '20px'}}>
+                <div style={{flex: 1, marginRight: '20px', width:"300px"}}>
                     <h2>search gamer</h2>
-                    <input type="text" value={gamer.nickname} name="nickname" onChange={handleGamerSearch}/>
-                    <button onClick={searchGamer}>search</button>
+                    <input className="inputfield" type="text" value={gamer.nickname} name="nickname" onChange={handleGamerSearch}/>
+                    <br/><button onClick={searchGamer}>search</button>
                     <div style={{overflowY: 'scroll', height: '300px', border: '1px solid #ccc'}}>
                         <ul>
                             {Array.isArray(gamersFound) && gamersFound.map(gamer => (
@@ -119,10 +120,10 @@ const ParticipationCreate = () => {
                         </ul>
                     </div>
                 </div>
-                <div style={{flex: 1}}>
+                <div style={{flex: 1, width:"300px"}}>
                     <h2>search tournament</h2>
-                    <input type="text" value={tournament.name} name="name" onChange={handleTournamentSearch}/>
-                    <button onClick={searchTournament}>search</button>
+                    <input className="inputfield"  type="text" value={tournament.name} name="name" onChange={handleTournamentSearch}/>
+                    <br/><button onClick={searchTournament}>search</button>
                     <div style={{overflowY: 'scroll', height: '300px', border: '1px solid #ccc'}}>
                         <ul>
                             {Array.isArray(tournamentsFound) && tournamentsFound.map(tournament => (
@@ -145,16 +146,17 @@ const ParticipationCreate = () => {
             <form onSubmit={handleSubmit}>
                 <label>
                     Position:<br/>
-                    <input type="text" name="position" value={formData.position} onChange={handleChange} required/>
+                    <input className="inputfield"  type="text" name="position" value={formData.position} onChange={handleChange} required/>
                 </label>
                 <br/>
                 <label>
                     Prize:<br/>
-                    <input type="text" name="prize" value={formData.prize} onChange={handleChange} required/>
+                    <input className="inputfield"  type="text" name="prize" value={formData.prize} onChange={handleChange} required/>
                 </label>
                 <br/>
                 <button type="submit">Create Participation</button>
             </form>
+        </div>
         </div>
     );
 };

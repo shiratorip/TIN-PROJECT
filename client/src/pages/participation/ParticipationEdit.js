@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useSearchParams, useNavigate} from 'react-router-dom';
+import {useSearchParams, useNavigate, Link} from 'react-router-dom';
 
 const ParticipationEdit = () => {
     const initialFormData = {
@@ -40,7 +40,8 @@ const ParticipationEdit = () => {
     }, [searchParams]);
 
     useEffect(() => {
-        
+        formData.position=participation.position;
+        formData.prize=participation.prize;
         if (participation.id) {
             fetch(`/api/gamer/${participation.Gamer_id}`)
                 .then(response => response.json())
@@ -73,7 +74,7 @@ const ParticipationEdit = () => {
     
         formData.gamer_id = selectedGamer.id;
         formData.tournament_id = selectedTournament.id;
-    
+
         fetch(`/api/participation/${participation.id}`, {
             method: 'PUT',
             headers: {
@@ -162,9 +163,9 @@ const ParticipationEdit = () => {
             <h1>Edit Participation with id: {participation.id}</h1>
             <div id="container" style={{display: 'flex'}}>
 
-                <div style={{flex: 1, marginRight: '20px'}}>
+                <div style={{flex: 1, width:"300px"}}>
                     <h2>search gamer</h2>
-                    <input type="text" value={gamer.nickname} name="nickname" onChange={handleGamerSearch}/>
+                    <input className="inputfield"  type="text" value={gamer.nickname} name="nickname" onChange={handleGamerSearch}/>
                     <button onClick={searchGamer}>search</button>
                     <div style={{overflowY: 'scroll', height: '300px', border: '1px solid #ccc'}}>
                         <ul>
@@ -185,7 +186,7 @@ const ParticipationEdit = () => {
                 </div>
                 <div style={{flex: 1}}>
                     <h2>search tournament</h2>
-                    <input type="text" value={tournament.name} name="name" onChange={handleTournamentSearch}/>
+                    <input className="inputfield"  type="text" value={tournament.name} name="name" onChange={handleTournamentSearch}/>
                     <button onClick={searchTournament}>search</button>
                     <div style={{overflowY: 'scroll', height: '300px', border: '1px solid #ccc'}}>
                         <ul>
@@ -209,18 +210,22 @@ const ParticipationEdit = () => {
             <form onSubmit={handleSubmit}>
                 <label>
                     Position:<br/>
-                    <input type="text" value={participation.position} name="position" onChange={handleChange} required />
+                    <input className="inputfield"  type="text" value={formData.position} name="position" onChange={handleChange} required />
 
                 </label>
                 <br/>
                 <label>
                     Prize:<br/>
-                    <input type="text" name="prize" value={participation.prize} onChange={handleChange} required/>
+                    <input className="inputfield"  type="text" name="prize" value={formData.prize} onChange={handleChange} required/>
                 </label>
                 <br/>
+                <button className="button-red" type="button" onClick={deleteParticipation}>delete</button>
+                <button className="button-green" type="submit" onClick={handleSubmit}>save</button><br/><br/>
+                <Link to={`/participation-list/?page=1`}>
+                    <button type="submit">back to participation list</button>
+                </Link>
             </form>
-            <button type="button" onClick={deleteParticipation}>delete</button>
-            <button type="submit" onClick={handleSubmit}>update Participation</button>
+
         </div>
     );
 };

@@ -4,6 +4,9 @@
 3. optional step: if you want to reinstall database stop client and server and then run the last script
 ## Available Scripts
 In the project directory, you can run:
+### `npm run ready`
+^install dependencies
+
 ### `npm run start server`
  ^Starts the server [http://localhost:5000](http://localhost:5000)
 

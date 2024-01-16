@@ -142,9 +142,10 @@ const GamerEdit = () => {
                     </label>
                     <br/>
                     <button className="button-red" type="button" onClick={deleteGamer}>delete</button>
-                    <br/><br/>
+                    <button className="button-green" type="submit">save</button>
+                    <br/>
                     <Link to={`/gamer/?id=${gamer.id}`}>
-                        <button className="button-green" type="submit">update and back to profile</button>
+                        <button type="submit">back to profile</button>
                     </Link>
                 </form>
             </div>

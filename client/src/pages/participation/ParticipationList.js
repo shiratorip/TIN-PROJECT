@@ -40,32 +40,37 @@ const ParticipationList = () => {
 
     return (
         <div>
-            <div className='centered-div'>
-                <button disabled={prevPage === null}>
-                    <Link to={`/participation-list/?page=${prevPage}`}>previous</Link>
-                </button>
-                {thisPage}
-                <button>
-                    <Link to={`/participation-list/?page=${nextPage}`}>next</Link>
-                </button>
+            <div className='centered-div-buttons'>
+                <Link to={`/participation-list/?page=${prevPage}`}>
+                    <button disabled={prevPage === null} className="page-button">previous</button>
+                </Link> {thisPage}<Link to={`/participation-list/?page=${nextPage}`}>
+                    <button className="page-button">next</button>
+                </Link>
             </div>
-            <div className="centered-div">
-                <h1>Participation List</h1>
-                <ul>
-                    {participations.map(participation => (
-                        <li key={participation.id}>
+            <h1>Participation List</h1>
+            <div className="centered-div-part">
+
+                {participations.map(participation => (
+                    <div className="liparticipation" key={participation.id}>
+                        <div className="ligamer">
                             <img onError={e => {
                                 e.currentTarget.src = "https://osu.ppy.sh/images/layout/avatar-guest.png"
                             }} src={participation.avatar_url} height={50} width={50} alt="Avatar"/>
                             <Link to={`/gamer/?id=${participation.Gamer_id}`}>{participation.nickname}</Link>
-                            <Link to={`/tournament/?id=${participation.Tournament_id}`}>{participation.name}</Link>
-                            place:{participation.position} prize:{participation.prize}<Link
-                            to={`/participation-edit/?id=${participation.id}`}>
-                            <button>edit</button>
-                        </Link>
-                        </li>
-                    ))}
-                </ul>
+                        </div>
+
+                        <Link to={`/tournament/?id=${participation.Tournament_id}`}>{participation.name}</Link><br/>
+                        place:{participation.position} prize:{participation.prize}
+                        <div className="justdiv">
+                            <Link to={`/participation-edit/?id=${participation.id}`}><br/>
+
+                                <button>edit</button>
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+
+
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {useSearchParams, useNavigate} from 'react-router-dom';
+import {useSearchParams, useNavigate, Link} from 'react-router-dom';
 
 const TournamentEdit = () => {
     const [searchParams] = useSearchParams()
@@ -145,10 +145,11 @@ const TournamentEdit = () => {
                         <textarea className="inputfield" name="description" value={formData.description} onChange={handleChange} required/>
                     </label>
                     <br/>
-                </form>
-                <button className="button-red" type="button" onClick={deleteTournament}>delete</button><button className="button-green" type="submit">save</button><br/><br/>
-                <button type="submit" onClick={handleSubmit}>update Tournament</button>
-            </div>
+                    <button className="button-red" type="button" onClick={deleteTournament}>delete</button><button className="button-green" type="submit">save</button><br/><br/>
+                    <Link to={`/tournament/?id=${tournament.id}`}>
+                        <button type="submit">back to profile</button>
+                    </Link>                </form>
+                           </div>
         </div>
     );
 };
