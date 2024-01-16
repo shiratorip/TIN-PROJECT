@@ -1,7 +1,9 @@
 ## How to use an app:
-1. start the server
-2. start the client
-3. optional step: if you want to reinstall database stop client and server and then run the last script
+1. optional step: if you want to reinstall database stop client and server and then run reinstall script
+2. install dependencies 
+3. start the server
+4. start the client
+
 ## Available Scripts
 In the project directory, you can run:
 ### `npm run ready`
